@@ -3,12 +3,12 @@ __author__ = 'Jesse Moy'
 import datetime
 import linecache
 import shutil
+import arcpy
 from osgeo import gdal
 from osgeo.gdalconst import *
 from osgeo import gdal_array
-import arcpy
 from wmi import WMI
-from scripts.run_farsite import *
+from run_farsite import *
 from tree_mortality import *
 from array_to_raster import *
 from ecosystem_to_fuel import *

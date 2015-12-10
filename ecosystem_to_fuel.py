@@ -1,6 +1,9 @@
 __author__ = 'Jesse Moy'
 
+import numpy
 
+
+# Creates a fuel array based on ecosystem type and time since last disturbance
 def ecosystem_to_fuel(ecosystem_array,
                       last_disturbance_array,
                       fuel_array,
@@ -10,8 +13,9 @@ def ecosystem_to_fuel(ecosystem_array,
     succession_time_mid = 10
     succession_time_climax = 20
 
-    for row_index, row_value in enumerate(ecosystem_array):
-        for col_index, cell_value in enumerate(row_value):
+    for index, cell_value in numpy.ndenumerate(ecosystem_array):
+            row_index = index[0]
+            col_index = index[1]
 
             if last_disturbance_array[row_index][col_index] > succession_time_climax:
                 fuel_array[row_index][col_index] = translation[cell_value]['climax_fuel']

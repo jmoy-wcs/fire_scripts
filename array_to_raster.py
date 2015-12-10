@@ -2,7 +2,7 @@ __author__ = 'Jesse Moy'
 
 import numpy
 
-
+# Convert numpy to ASCII raster for use in FARSITE
 def array_to_raster(out_path, array, header):
 
     out_asc = open(out_path, 'w')
